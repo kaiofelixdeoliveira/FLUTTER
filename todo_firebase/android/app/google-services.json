@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1007430357242",
+    "firebase_url": "https://todo-fc28d.firebaseio.com",
+    "project_id": "todo-fc28d",
+    "storage_bucket": "todo-fc28d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007430357242:android:8e07008b76e25c3813f943",
+        "android_client_info": {
+          "package_name": "com.kaio.todo_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007430357242-i5908jmji3j4833t3hg8qeclvraqlch2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSYPRRxWWqNR_Wu1UoczAxgoKAR0uIYxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007430357242-i5908jmji3j4833t3hg8qeclvraqlch2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
