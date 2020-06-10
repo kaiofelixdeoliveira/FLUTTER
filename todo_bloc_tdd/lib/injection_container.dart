@@ -6,6 +6,8 @@ import 'package:todo_bloc/features/album/data/repositories/album_repository_impl
 import 'package:todo_bloc/features/album/domain/usecases/getAlbum.dart';
 import 'package:todo_bloc/features/album/domain/usecases/getAlbums.dart';
 
+import 'core/database/init_database.dart';
+import 'core/database/repository_database.dart';
 import 'features/album/data/datasources/album_local_datasource.dart';
 import 'features/album/data/datasources/album_remote_datasource.dart';
 import 'features/album/domain/repositories/album_repository.dart';
@@ -30,21 +32,26 @@ Future<void> init() async {
       albumRemoteDataSource: sl(),
     ),
   );
+  sl.registerLazySingleton<DatabaseRepository>(
+    () => DatabaseRepositoryImpl(
+      database: DatabaseHelper.instance.database
+    ),
+  );
 
   // Data sources
   sl.registerLazySingleton<AlbumRemoteDataSource>(
     () => AlbumRemoteDataSourceImpl(client: sl()),
   );
-
   sl.registerLazySingleton<AlbumLocalDataSource>(
-    () => AlbumLocalDataSourceImpl(),
+    () => AlbumLocalDataSourceImpl(databaseRepository: sl()),
   );
 
   //! Core
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 
   //! External
-
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => DataConnectionChecker());
+  
+
 }

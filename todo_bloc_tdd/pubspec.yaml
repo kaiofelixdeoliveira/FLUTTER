@@ -29,7 +29,8 @@ dependencies:
   dartz: ^0.8.6
   data_connection_checker: ^0.3.4
   get_it:
-  shared_preferences:
+  sqflite:
+ 
 
 
   # The following adds the Cupertino Icons font to your application.

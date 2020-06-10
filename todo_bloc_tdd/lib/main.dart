@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'core/database/init_database.dart';
 import 'features/album/data/repositories/album_repository_impl.dart';
 import 'features/album/presentation/bloc/album_bloc.dart';
 import './injection_container.dart' as di;
@@ -8,6 +9,7 @@ import 'features/album/data/models/album.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await DatabaseHelper.instance.database;
   await di.init();
   runApp(MyApp());
 }

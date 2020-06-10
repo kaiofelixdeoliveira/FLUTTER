@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:todo_bloc/core/error/failure.dart';
 import 'package:todo_bloc/core/platform/network_info.dart';
@@ -26,11 +27,12 @@ class AlbumRepositoryImpl implements AlbumRepository {
   }
 
   Future<Either<Failure, List<entitie.Album>>> getAllAlbums() async {
-
-    
-    if (await networkInfo.isConnected) {
+    var connect = await networkInfo.isConnected;
+  
+    if (connect) {
       try {
-        final List<AlbumModel> albums = await albumRemoteDataSource.getAllAlbums();
+        final List<AlbumModel> albums =
+            await albumRemoteDataSource.getAllAlbums();
         albumLocalDataSource.cacheAlbums(albums);
         return Right(albums);
       } on ServerException {
