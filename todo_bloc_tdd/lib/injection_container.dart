@@ -3,8 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:todo_bloc/core/platform/network_info.dart';
 import 'package:todo_bloc/features/album/data/repositories/album_repository_impl.dart';
+import 'package:todo_bloc/features/album/domain/usecases/createAlbum.dart';
+import 'package:todo_bloc/features/album/domain/usecases/deleteAlbum.dart';
 import 'package:todo_bloc/features/album/domain/usecases/getAlbum.dart';
 import 'package:todo_bloc/features/album/domain/usecases/getAlbums.dart';
+import 'package:todo_bloc/features/album/domain/usecases/updateAlbum.dart';
 
 import 'core/database/init_database.dart';
 import 'core/database/repository_database.dart';
@@ -17,10 +20,19 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   sl.registerFactory(
-    () => AlbumBloc(repository: sl()),
+    () => AlbumBloc(
+      receivedCreateAlbums: CreateAlbum(repository: sl()),
+      receivedDeleteAlbum: DeleteAlbum(repository: sl()),
+      receivedGetAlbum: GetAlbum(repository: sl()),
+      receivedGetAlbums: GetAlbums(repository: sl()),
+      receivedUpdateAlbum: UpdateAlbum(repository: sl()),
+    ),
   );
 
   // Use cases
+  sl.registerLazySingleton(() => UpdateAlbum(repository: sl()));
+  sl.registerLazySingleton(() => DeleteAlbum(repository: sl()));
+  sl.registerLazySingleton(() => CreateAlbum(repository: sl()));
   sl.registerLazySingleton(() => GetAlbum(repository: sl()));
   sl.registerLazySingleton(() => GetAlbums(repository: sl()));
 
@@ -33,9 +45,7 @@ Future<void> init() async {
     ),
   );
   sl.registerLazySingleton<DatabaseRepository>(
-    () => DatabaseRepositoryImpl(
-      database: DatabaseHelper.instance.database
-    ),
+    () => DatabaseRepositoryImpl(database: DatabaseHelper.instance.database),
   );
 
   // Data sources
@@ -52,6 +62,4 @@ Future<void> init() async {
   //! External
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => DataConnectionChecker());
-  
-
 }

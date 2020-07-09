@@ -9,8 +9,7 @@ class GetAlbums {
 
 GetAlbums({@required this.repository});
 
-  Future<Either<Failure, List<entitie.Album>>> getAllAlbums(
-      entitie.Album params) async {
+  Future<Either<Failure, List<entitie.Album>>> call() async {
     return await repository.getAllAlbums();
   }
 }

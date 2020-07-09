@@ -1,0 +1,44 @@
+[
+    {
+        "title": "home de ferro",
+        "general": "horror",
+        "id": 2,
+        "avaliable": 4,
+        "images": [
+            {
+                "path": "assets/1.jpg"
+            },
+            {
+                "path": "assets/2.jpg"
+            }
+        ]
+    },
+    {
+        "title": "superman",
+        "general": "action",
+        "id": 1,
+        "avaliable": 5,
+        "images": [
+            {
+                "path": "assets/1.jpg"
+            },
+            {
+                "path": "assets/2.jpg"
+            }
+        ]
+    },
+    {
+        "title": "freed kruguer",
+        "general": "horror",
+        "id": 3,
+        "avaliable": 3,
+        "images": [
+            {
+                "path": "assets/1.jpg"
+            },
+            {
+                "path": "assets/2.jpg"
+            }
+        ]
+    }
+]

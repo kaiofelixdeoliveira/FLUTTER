@@ -16,6 +16,7 @@ class AlbumLocalDataSourceImpl implements AlbumLocalDataSource {
   AlbumLocalDataSourceImpl({@required this.databaseRepository});
 
   cacheAlbums(List<AlbumModel> albumsToCache) async {
+    print("call cache");
     List<AlbumModel> albumsAdd = List<AlbumModel>();
     List<AlbumModel> albumsUpdate = List<AlbumModel>();
 
@@ -35,7 +36,10 @@ class AlbumLocalDataSourceImpl implements AlbumLocalDataSource {
   @override
   Future<List<AlbumModel>> getLastAlbums() async {
     var albums = await databaseRepository.getAll();
-    print(albums.length);
-    return albums;
+    if (albums != null) {
+      return albums;
+    } else {
+      throw CacheException("error when charge last Albums");
+    }
   }
 }

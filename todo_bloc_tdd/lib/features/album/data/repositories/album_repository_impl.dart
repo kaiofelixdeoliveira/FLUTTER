@@ -23,13 +23,14 @@ class AlbumRepositoryImpl implements AlbumRepository {
 
   @override
   Future<Either<Failure, entitie.Album>> getAlbum(int params) async {
-    return Right(await albumRemoteDataSource.getAlbum(params));
+    if (await networkInfo.isConnected) {
+      return Right(await albumRemoteDataSource.getAlbum(params));
+    }
+    return null;
   }
 
   Future<Either<Failure, List<entitie.Album>>> getAllAlbums() async {
-    var connect = await networkInfo.isConnected;
-  
-    if (connect) {
+    if (await networkInfo.isConnected) {
       try {
         final List<AlbumModel> albums =
             await albumRemoteDataSource.getAllAlbums();
@@ -51,16 +52,26 @@ class AlbumRepositoryImpl implements AlbumRepository {
   @override
   Future<Either<Failure, entitie.Album>> createAlbum(
       entitie.Album album) async {
-    return Right(await albumRemoteDataSource.createAlbum(album));
+    if (await networkInfo.isConnected) {
+      final albumReceived = await albumRemoteDataSource.createAlbum(album);
+      return Right(albumReceived);
+    }
+    return null;
   }
 
   @override
   Future<Either<Failure, AlbumModel>> deleteAlbum(int id) async {
-    return Right(await albumRemoteDataSource.deleteAlbum(id));
+    if (await networkInfo.isConnected) {
+      return Right(await albumRemoteDataSource.deleteAlbum(id));
+    }
+    return null;
   }
 
   @override
   Future<Either<Failure, AlbumModel>> updateAlbum(entitie.Album album) async {
-    return Right(await albumRemoteDataSource.updateAlbum(album));
+    if (await networkInfo.isConnected) {
+      return Right(await albumRemoteDataSource.updateAlbum(album));
+    }
+    return null;
   }
 }

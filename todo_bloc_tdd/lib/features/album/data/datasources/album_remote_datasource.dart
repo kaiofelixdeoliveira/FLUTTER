@@ -32,11 +32,12 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         if (response.statusCode == 200) {
           return AlbumModel.fromJson(json.decode(response.body));
         } else {
-          throw ServerException();
+          throw ServerException(
+              "status code error" + response.statusCode.toString());
         }
       }
     } catch (error) {
-      throw Exception('Failed to load album ' + error);
+      throw ServerException('Failed to load album ' + error.toString());
     }
     return null;
   }
@@ -52,10 +53,11 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
 
         return result;
       } else {
-        throw ServerException();
+        throw ServerException(
+              "status code error" + response.statusCode.toString());
       }
     } catch (error) {
-      throw Exception('Failed to load albums' + error);
+      throw ServerException('Failed to load albums' + error.toString());
     }
   }
 
@@ -74,11 +76,12 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         if (response.statusCode == 201) {
           return AlbumModel.fromJson(json.decode(response.body));
         } else {
-          throw ServerException();
+          throw ServerException(
+              "status code error" + response.statusCode.toString());
         }
       }
     } catch (error) {
-      throw Exception('Failed to create album ' + error);
+      throw throw ServerException("error when create album"+error.toString());
     }
     return null;
   }
@@ -94,11 +97,12 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         if (response.statusCode == 200) {
           return AlbumModel.fromJson(json.decode(response.body));
         } else {
-          throw ServerException();
+          throw ServerException(
+              "status code error" + response.statusCode.toString());
         }
       }
     } catch (error) {
-      throw Exception('Failed delete album ' + error);
+      throw ServerException('Failed delete album ' + error.toString());
     }
     return null;
   }
@@ -117,11 +121,12 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         if (response.statusCode == 200) {
           return AlbumModel.fromJson(json.decode(response.body));
         } else {
-          throw ServerException();
+          throw ServerException(
+              "status code error" + response.statusCode.toString());
         }
       }
     } catch (error) {
-      throw Exception('Failed update album ' + error);
+      throw ServerException('Failed update album ' + error.toString());
     }
     return null;
   }

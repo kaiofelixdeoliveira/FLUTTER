@@ -10,8 +10,8 @@ class AlbumModel extends Album {
 
   factory AlbumModel.fromJson(Map<String, dynamic> json) {
     return AlbumModel(
-      userId: (json['userId'] as num).toInt(),
-      id: (json['id'] as num).toInt(),
+      userId: json['userId'],
+      id: json['id'],
       title: json['title'],
     );
   }

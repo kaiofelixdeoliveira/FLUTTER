@@ -1,5 +1,9 @@
+import 'dart:async';
+
+import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_bloc/features/album/domain/usecases/createAlbum.dart';
 
 import 'core/database/init_database.dart';
 import 'features/album/data/repositories/album_repository_impl.dart';
@@ -40,10 +44,58 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  StreamSubscription<DataConnectionStatus> listener;
+  var Internetstatus = "Unknown";
+
   @override
   void initState() {
     super.initState();
+    CheckInternet();
     BlocProvider.of<AlbumBloc>(context).add(LoadingSucessAlbumEvent());
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    listener.cancel();
+    super.dispose();
+  }
+
+  CheckInternet() async {
+    // Simple check to see if we have internet
+    print("The statement 'this machine is connected to the Internet' is: ");
+    print(await DataConnectionChecker().hasConnection);
+    // returns a bool
+
+    // We can also get an enum instead of a bool
+    print("Current status: ${await DataConnectionChecker().connectionStatus}");
+    // prints either DataConnectionStatus.connected
+    // or DataConnectionStatus.disconnected
+
+    // This returns the last results from the last call
+    // to either hasConnection or connectionStatus
+    print("Last results: ${DataConnectionChecker().lastTryResults}");
+
+    // actively listen for status updates
+    listener = DataConnectionChecker().onStatusChange.listen((status) {
+      switch (status) {
+        case DataConnectionStatus.connected:
+          Internetstatus = "Connectd TO THe Internet";
+          print('Data connection is available.');
+          setState(() {});
+          break;
+        case DataConnectionStatus.disconnected:
+          Internetstatus = "No Data Connection";
+          print('You are disconnected from the internet.');
+          setState(() {});
+          break;
+      }
+    });
+
+    // close listener after 30 seconds, so the program doesn't run forever
+//    await Future.delayed(Duration(seconds: 30));
+//    await listener.cancel();
+    return await DataConnectionChecker().connectionStatus;
   }
 
   @override
@@ -89,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
         } else if (state is LoadedSucessState) {
           return Column(
             children: <Widget>[
+              Text("$Internetstatus", style: TextStyle(backgroundColor: Colors.black, color: Colors.white,fontSize: 20),),
               Text("Total Albums:${state.album.length}"),
               Expanded(
                 child: ListView.builder(
