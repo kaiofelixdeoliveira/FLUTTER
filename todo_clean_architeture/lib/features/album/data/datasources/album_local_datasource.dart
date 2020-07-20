@@ -38,8 +38,7 @@ class AlbumLocalDataSourceImpl implements AlbumLocalDataSource {
     var albums = await databaseRepository.getAll();
     if (albums != null) {
       return albums;
-    } else {
-      throw CacheException("error when charge last Albums");
     }
+    throw CacheException("error when charge last Albums");
   }
 }

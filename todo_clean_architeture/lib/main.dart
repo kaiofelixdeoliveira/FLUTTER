@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
     listener = DataConnectionChecker().onStatusChange.listen((status) {
       switch (status) {
         case DataConnectionStatus.connected:
-          Internetstatus = "Connectd TO THe Internet";
+          Internetstatus = "Connected to the internet";
           print('Data connection is available.');
           setState(() {});
           break;
@@ -141,7 +141,13 @@ class _MyHomePageState extends State<MyHomePage> {
         } else if (state is LoadedSucessState) {
           return Column(
             children: <Widget>[
-              Text("$Internetstatus", style: TextStyle(backgroundColor: Colors.black, color: Colors.white,fontSize: 20),),
+              Text(
+                "$Internetstatus",
+                style: TextStyle(
+                    backgroundColor: Colors.black,
+                    color: Colors.white,
+                    fontSize: 20),
+              ),
               Text("Total Albums:${state.album.length}"),
               Expanded(
                 child: ListView.builder(

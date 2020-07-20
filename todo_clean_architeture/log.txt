@@ -1,0 +1,278 @@
+[  +23 ms] executing: [/etc/opt/flutter/] git -c log.showSignature=false log -n 1 --pretty=format:%H
+[  +38 ms] Exit code 0 from: git -c log.showSignature=false log -n 1 --pretty=format:%H
+[        ] 5f21edf8b66e31a39133177319414395cc5b5f48
+[   +1 ms] executing: [/etc/opt/flutter/] git tag --contains HEAD
+[ +207 ms] Exit code 0 from: git tag --contains HEAD
+[   +1 ms] 1.17.2
+           1.17.3
+           1.17.4
+[  +15 ms] executing: [/etc/opt/flutter/] git rev-parse --abbrev-ref --symbolic @{u}
+[   +7 ms] Exit code 0 from: git rev-parse --abbrev-ref --symbolic @{u}
+[        ] origin/stable
+[        ] executing: [/etc/opt/flutter/] git ls-remote --get-url origin
+[   +6 ms] Exit code 0 from: git ls-remote --get-url origin
+[        ] https://github.com/flutter/flutter.git
+[ +115 ms] executing: [/etc/opt/flutter/] git rev-parse --abbrev-ref HEAD
+[   +8 ms] Exit code 0 from: git rev-parse --abbrev-ref HEAD
+[        ] stable
+[  +40 ms] Artifact Instance of 'AndroidMavenArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[   +5 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[  +19 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb devices -l
+[  +63 ms] List of devices attached
+           LGM250K7J7IFLJCEYS     device usb:2-1.1 product:mlv5_global_com model:LG_M250 device:mlv5 transport_id:5
+[  +11 ms] /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell getprop
+[ +113 ms] Artifact Instance of 'AndroidMavenArtifacts' is not required, skipping update.
+[   +4 ms] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[ +228 ms] Found plugin sqflite at /home/kaio/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1/
+[ +178 ms] Found plugin sqflite at /home/kaio/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1/
+[  +90 ms] Generating /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+[  +32 ms] ro.hardware = mlv5
+[        ] ro.build.characteristics = default
+[  +63 ms] Launching lib/main.dart on LG M250 in debug mode...
+[  +10 ms] /etc/opt/flutter/bin/cache/dart-sdk/bin/dart /etc/opt/flutter/bin/cache/artifacts/engine/linux-x64/frontend_server.dart.snapshot --sdk-root /etc/opt/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --incremental --target=flutter --debugger-module-names -Ddart.developer.causal_async_stacks=true --output-dill /tmp/flutter_tool.AHUSZT/app.dill --packages /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/.packages -Ddart.vm.profile=false -Ddart.vm.product=false --bytecode-options=source-positions,local-var-info,debugger-stops,instance-field-initializers,keep-unreachable-code,avoid-closure-call-instructions --enable-asserts --track-widget-creation --filesystem-scheme org-dartlang-root --initialize-from-dill build/cache.dill
+[  +20 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell -x logcat -v time -t 1
+[ +489 ms] Exit code 0 from: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell -x logcat -v time -t 1
+[        ] --------- beginning of main
+           06-22 14:30:02.159 I/NetworkController.WifiSignalController( 1463): Change in state to: connected=true,enabled=true,level=3,inetCondition=1,iconGroup=IconGroup(Default Wi-Fi Icons),activityIn=false,activityOut=false,rssi=-48,,ssid="ROBOT",isGigaWiFi=false,isAttWifiCall=false
+[  +23 ms] <- compile package:todo_bloc/main.dart
+[  +18 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb version
+[  +29 ms] Android Debug Bridge version 1.0.41
+           Version 30.0.0-6374843
+           Installed as /home/kaio/Android/Sdk/platform-tools/adb
+[   +3 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb start-server
+[   +9 ms] Building APK
+[  +15 ms] Running Gradle task 'assembleDebug'...
+[   +2 ms] gradle.properties already sets `android.enableR8`
+[   +4 ms] Using gradle from /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/android/gradlew.
+[   +2 ms] /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/android/gradlew mode: 33277 rwxrwxr-x.
+[  +30 ms] executing: /snap/android-studio/90/android-studio/jre/bin/java -version
+[+1145 ms] Exit code 0 from: /snap/android-studio/90/android-studio/jre/bin/java -version
+[        ] openjdk version "1.8.0_242-release"
+           OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+           OpenJDK 64-Bit Server VM (build 25.242-b3-6222593, mixed mode)
+[  +18 ms] executing: [/home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/android/] /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/android/gradlew -Pverbose=true -Ptarget-platform=android-arm -Ptarget=/home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/lib/main.dart -Ptrack-widget-creation=true -Pfilesystem-scheme=org-dartlang-root assembleDebug
+[+23033 ms] > Task :app:compileFlutterBuildDebug
+[        ] [  +38 ms] executing: [/etc/opt/flutter/] git -c log.showSignature=false log -n 1 --pretty=format:%H
+[  +90 ms] [ +428 ms] Exit code 0 from: git -c log.showSignature=false log -n 1 --pretty=format:%H
+[        ] [   +1 ms] 5f21edf8b66e31a39133177319414395cc5b5f48
+[        ] [        ] executing: [/etc/opt/flutter/] git tag --contains HEAD
+[+1599 ms] [+1614 ms] Exit code 0 from: git tag --contains HEAD
+[ +100 ms] [        ] 1.17.2
+[   +1 ms]            1.17.3
+[        ]            1.17.4
+[        ] [  +26 ms] executing: [/etc/opt/flutter/] git rev-parse --abbrev-ref --symbolic @{u}
+[        ] [  +13 ms] Exit code 0 from: git rev-parse --abbrev-ref --symbolic @{u}
+[        ] [        ] origin/stable
+[        ] [        ] executing: [/etc/opt/flutter/] git ls-remote --get-url origin
+[        ] [   +6 ms] Exit code 0 from: git ls-remote --get-url origin
+[        ] [        ] https://github.com/flutter/flutter.git
+[+2694 ms] [+2660 ms] executing: [/etc/opt/flutter/] git rev-parse --abbrev-ref HEAD
+[ +199 ms] [ +256 ms] Exit code 0 from: git rev-parse --abbrev-ref HEAD
+[        ] [        ] stable
+[+1899 ms] [+1852 ms] Artifact Instance of 'AndroidMavenArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[   +1 ms] [        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[ +398 ms] [ +414 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[   +3 ms] [        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[   +4 ms] [   +1 ms] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[   +3 ms] [   +1 ms] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[  +88 ms] [   +1 ms] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] [   +1 ms] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] [   +1 ms] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[  +98 ms] [ +175 ms] Artifact Instance of 'MaterialFonts' is not required, skipping update.
+[        ] [   +1 ms] Artifact Instance of 'GradleWrapper' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'AndroidMavenArtifacts' is not required, skipping update.
+[   +2 ms] [        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FlutterSdk' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[   +5 ms] [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] [        ] Artifact Instance of 'FontSubsetArtifacts' is not required, skipping update.
+[ +185 ms] [ +207 ms] Initializing file store
+[        ] [  +48 ms] kernel_snapshot: Starting due to {}
+[  +99 ms] [  +59 ms] /etc/opt/flutter/bin/cache/dart-sdk/bin/dart /etc/opt/flutter/bin/cache/artifacts/engine/linux-x64/frontend_server.dart.snapshot --sdk-root /etc/opt/flutter/bin/cache/artifacts/engine/common/flutter_patched_sdk/ --target=flutter -Ddart.developer.causal_async_stacks=true -Ddart.vm.profile=false -Ddart.vm.product=false --bytecode-options=source-positions,local-var-info,debugger-stops,instance-field-initializers,keep-unreachable-code,avoid-closure-call-instructions --enable-asserts --track-widget-creation --no-link-platform --packages /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/.packages --output-dill /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/.dart_tool/flutter_build/e86ff19003cd6682d8b912f7cfd43564/app.dill --depfile /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/.dart_tool/flutter_build/e86ff19003cd6682d8b912f7cfd43564/kernel_snapshot.d package:todo_bloc/main.dart
+[+24199 ms] [+24188 ms] kernel_snapshot: Complete
+[+2299 ms] [+2346 ms] debug_android_application: Starting due to {}
+[ +500 ms] [ +500 ms] debug_android_application: Complete
+[ +700 ms] [ +643 ms] Persisting file store
+[        ] [  +15 ms] Done persisting file store
+[        ] [   +7 ms] build succeeded.
+[        ] [  +17 ms] "flutter assemble" took 31.644ms.
+[ +604 ms] > Task :app:packLibsflutterBuildDebug
+[        ] > Task :app:preBuild UP-TO-DATE
+[        ] > Task :app:preDebugBuild UP-TO-DATE
+[        ] > Task :sqflite:preBuild UP-TO-DATE
+[        ] > Task :sqflite:preDebugBuild UP-TO-DATE
+[        ] > Task :sqflite:compileDebugAidl NO-SOURCE
+[        ] > Task :app:compileDebugAidl NO-SOURCE
+[  +91 ms] > Task :sqflite:packageDebugRenderscript NO-SOURCE
+[        ] > Task :app:checkDebugManifest
+[        ] > Task :app:generateDebugBuildConfig
+[        ] > Task :app:compileDebugRenderscript NO-SOURCE
+[        ] > Task :app:cleanMergeDebugAssets UP-TO-DATE
+[  +99 ms] > Task :app:mergeDebugShaders
+[        ] > Task :app:compileDebugShaders
+[        ] > Task :app:generateDebugAssets
+[        ] > Task :sqflite:mergeDebugShaders
+[        ] > Task :sqflite:compileDebugShaders
+[        ] > Task :sqflite:generateDebugAssets
+[  +97 ms] > Task :sqflite:packageDebugAssets
+[        ] > Task :app:mergeDebugAssets
+[ +199 ms] > Task :app:copyFlutterAssetsDebug
+[        ] > Task :app:mainApkListPersistenceDebug
+[        ] > Task :app:generateDebugResValues
+[        ] > Task :app:generateDebugResources
+[  +98 ms] > Task :sqflite:compileDebugRenderscript NO-SOURCE
+[        ] > Task :sqflite:generateDebugResValues
+[        ] > Task :sqflite:generateDebugResources
+[        ] > Task :sqflite:packageDebugResources
+[+1798 ms] > Task :app:createDebugCompatibleScreenManifests
+[        ] > Task :sqflite:checkDebugManifest
+[+1098 ms] > Task :sqflite:processDebugManifest
+[+1100 ms] > Task :app:processDebugManifest
+[ +102 ms] > Task :app:mergeDebugResources
+[  +97 ms] > Task :sqflite:generateDebugBuildConfig
+[        ] > Task :sqflite:parseDebugLibraryResources
+[  +99 ms] > Task :app:processDebugJavaRes NO-SOURCE
+[   +1 ms] > Task :sqflite:processDebugJavaRes NO-SOURCE
+[ +198 ms] > Task :app:checkDebugDuplicateClasses
+[        ] > Task :sqflite:javaPreCompileDebug
+[        ] > Task :sqflite:generateDebugRFile
+[+1699 ms] > Task :app:processDebugResources
+[ +899 ms] > Task :sqflite:compileDebugJavaWithJavac
+[   +1 ms] > Task :sqflite:bundleLibResDebug
+[        ] > Task :sqflite:bundleLibRuntimeDebug
+[  +98 ms] > Task :sqflite:createFullJarDebug
+[        ] > Task :sqflite:bundleLibCompileDebug
+[+2099 ms] > Task :app:compileDebugKotlin
+[ +101 ms] > Task :app:javaPreCompileDebug
+[ +501 ms] > Task :app:compileDebugJavaWithJavac
+[        ] > Task :app:compileDebugSources
+[ +697 ms] > Task :app:transformClassesWithDexBuilderForDebug
+[ +100 ms] > Task :app:validateSigningDebug
+[ +200 ms] > Task :app:signingConfigWriterDebug
+[        ] > Task :app:desugarDebugFileDependencies
+[  +99 ms] > Task :app:mergeDebugJniLibFolders
+[   +1 ms] > Task :sqflite:mergeDebugJniLibFolders
+[ +303 ms] > Task :sqflite:extractDebugAnnotations
+[        ] > Task :sqflite:mergeDebugNativeLibs
+[  +95 ms] > Task :sqflite:stripDebugDebugSymbols
+[        ] > Task :sqflite:transformNativeLibsWithIntermediateJniLibsForDebug
+[  +99 ms] > Task :sqflite:mergeDebugGeneratedProguardFiles UP-TO-DATE
+[        ] > Task :sqflite:mergeDebugConsumerProguardFiles UP-TO-DATE
+[        ] > Task :sqflite:prepareLintJarForPublish UP-TO-DATE
+[        ] > Task :sqflite:mergeDebugJavaResource
+[  +98 ms] > Task :sqflite:transformClassesAndResourcesWithSyncLibJarsForDebug
+[        ] > Task :sqflite:transformNativeLibsWithSyncJniLibsForDebug
+[  +99 ms] > Task :sqflite:bundleDebugAar
+[        ] > Task :sqflite:compileDebugSources
+[        ] > Task :sqflite:assembleDebug
+[ +699 ms] > Task :app:mergeDebugJavaResource
+[ +300 ms] > Task :app:mergeExtDexDebug
+[+1299 ms] > Task :app:mergeDexDebug
+[ +599 ms] > Task :app:mergeDebugNativeLibs
+[+1400 ms] > Task :app:stripDebugDebugSymbols
+[+4699 ms] > Task :app:packageDebug
+[ +104 ms] > Task :app:assembleDebug
+[ +201 ms] Deprecated Gradle features were used in this build, making it incompatible with Gradle 6.0.
+[        ] Use '--warning-mode all' to show the individual deprecation warnings.
+[        ] See https://docs.gradle.org/5.6.2/userguide/command_line_interface.html#sec:command_line_warnings
+[        ] BUILD SUCCESSFUL in 1m 20s
+[        ] 59 actionable tasks: 55 executed, 4 up-to-date
+[ +401 ms] Running Gradle task 'assembleDebug'... (completed in 82,0s)
+[  +47 ms] calculateSha: LocalDirectory: '/home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/build/app/outputs/apk'/app.apk
+[ +190 ms] calculateSha: reading file took 188us
+[+1013 ms] calculateSha: computing sha took 1013us
+[  +10 ms] ✓ Built build/app/outputs/apk/debug/app-debug.apk.
+[   +7 ms] executing: /home/kaio/Android/Sdk/build-tools/29.0.3/aapt dump xmltree /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/build/app/outputs/apk/app.apk AndroidManifest.xml
+[  +48 ms] Exit code 0 from: /home/kaio/Android/Sdk/build-tools/29.0.3/aapt dump xmltree /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/build/app/outputs/apk/app.apk AndroidManifest.xml
+[        ] N: android=http://schemas.android.com/apk/res/android
+             E: manifest (line=2)
+               A: android:versionCode(0x0101021b)=(type 0x10)0x1
+               A: android:versionName(0x0101021c)="1.0.0" (Raw: "1.0.0")
+               A: android:compileSdkVersion(0x01010572)=(type 0x10)0x1c
+               A: android:compileSdkVersionCodename(0x01010573)="9" (Raw: "9")
+               A: package="com.example.todo_bloc" (Raw: "com.example.todo_bloc")
+               A: platformBuildVersionCode=(type 0x10)0x1c
+               A: platformBuildVersionName=(type 0x10)0x9
+               E: uses-sdk (line=7)
+                 A: android:minSdkVersion(0x0101020c)=(type 0x10)0x10
+                 A: android:targetSdkVersion(0x01010270)=(type 0x10)0x1c
+               E: uses-permission (line=14)
+                 A: android:name(0x01010003)="android.permission.INTERNET" (Raw: "android.permission.INTERNET")
+               E: application (line=22)
+                 A: android:label(0x01010001)="todo_bloc" (Raw: "todo_bloc")
+                 A: android:icon(0x01010002)=@0x7f080000
+                 A: android:name(0x01010003)="io.flutter.app.FlutterApplication" (Raw: "io.flutter.app.FlutterApplication")
+                 A: android:debuggable(0x0101000f)=(type 0x12)0xffffffff
+                 A: android:appComponentFactory(0x0101057a)="androidx.core.app.CoreComponentFactory" (Raw: "androidx.core.app.CoreComponentFactory")
+                 E: activity (line=28)
+                   A: android:theme(0x01010000)=@0x7f0a0000
+                   A: android:name(0x01010003)="com.example.todo_bloc.MainActivity" (Raw: "com.example.todo_bloc.MainActivity")
+                   A: android:launchMode(0x0101001d)=(type 0x10)0x1
+                   A: android:configChanges(0x0101001f)=(type 0x11)0x40003fb4
+                   A: android:windowSoftInputMode(0x0101022b)=(type 0x11)0x10
+                   A: android:hardwareAccelerated(0x010102d3)=(type 0x12)0xffffffff
+                   E: intent-filter (line=35)
+                     E: action (line=36)
+                       A: android:name(0x01010003)="android.intent.action.MAIN" (Raw: "android.intent.action.MAIN")
+                     E: category (line=38)
+                       A: android:name(0x01010003)="android.intent.category.LAUNCHER" (Raw: "android.intent.category.LAUNCHER")
+                 E: meta-data (line=45)
+                   A: android:name(0x01010003)="flutterEmbedding" (Raw: "flutterEmbedding")
+                   A: android:value(0x01010024)=(type 0x10)0x2
+[  +15 ms] Stopping app 'app.apk' on LG M250.
+[   +1 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell am force-stop com.example.todo_bloc
+[+1992 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell pm list packages com.example.todo_bloc
+[+1178 ms] package:com.example.todo_bloc
+[   +7 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell cat /data/local/tmp/sky.com.example.todo_bloc.sha1
+[  +31 ms] e1877c7ba2bec84dd607be3899aadcb353a57ac4
+[        ] Installing APK.
+[   +2 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb version
+[  +14 ms] Android Debug Bridge version 1.0.41
+           Version 30.0.0-6374843
+           Installed as /home/kaio/Android/Sdk/platform-tools/adb
+[        ] executing: /home/kaio/Android/Sdk/platform-tools/adb start-server
+[   +9 ms] Installing build/app/outputs/apk/app.apk...
+[        ] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS install -t -r /home/kaio/Projetos/Pessoal/GITHUB/FLUTTER/todo_bloc_tdd/build/app/outputs/apk/app.apk
+[+11473 ms] Performing Streamed Install
+            Success
+[        ] Installing build/app/outputs/apk/app.apk... (completed in 11,5s)
+[   +6 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell echo -n 3bd3a6175938407f4fd0761c9276c7adb3335db2 > /data/local/tmp/sky.com.example.todo_bloc.sha1
+[  +48 ms] LG M250 startApp
+[   +7 ms] executing: /home/kaio/Android/Sdk/platform-tools/adb -s LGM250K7J7IFLJCEYS shell am start -a android.intent.action.RUN -f 0x20000000 --ez enable-background-compilation true --ez enable-dart-profiling true --ez enable-checked-mode true --ez verify-entry-points true com.example.todo_bloc/com.example.todo_bloc.MainActivity
+[+1749 ms] Starting: Intent { act=android.intent.action.RUN flg=0x20000000 cmp=com.example.todo_bloc/.MainActivity (has extras) }
+[        ] Waiting for observatory port to be available...

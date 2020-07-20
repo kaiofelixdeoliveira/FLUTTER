@@ -54,7 +54,7 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         return result;
       } else {
         throw ServerException(
-              "status code error" + response.statusCode.toString());
+            "status code error" + response.statusCode.toString());
       }
     } catch (error) {
       throw ServerException('Failed to load albums' + error.toString());
@@ -81,7 +81,7 @@ class AlbumRemoteDataSourceImpl implements AlbumRemoteDataSource {
         }
       }
     } catch (error) {
-      throw throw ServerException("error when create album"+error.toString());
+      throw throw ServerException("error when create album" + error.toString());
     }
     return null;
   }
